@@ -1,6 +1,6 @@
 import aiohttp
 import aiosqlite
-from os import getenv
+from os import *
 from aiogram import Router, F
 from aiogram.filters import Command
 from aiogram.fsm.state import State, StatesGroup
@@ -13,7 +13,7 @@ from aiogram.types import (
     InlineKeyboardButton,
     CallbackQuery)
 
-DB_NAME = "cities.db"
+DB_NAME = "/data/cities.db" if environ.get("AMVERA") else "bot.db"
 API_KEY = getenv('API_KEY')
 router=Router()
 
